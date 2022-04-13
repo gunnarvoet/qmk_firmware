@@ -27,13 +27,13 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_COLEMAK] = LAYOUT_planck_grid(
-        KC_TAB, KC_Q, KC_W, LCTL_T(KC_F), KC_P, KC_G,
-        KC_J, KC_L, LCTL_T(KC_U), KC_Y, KC_SCLN, KC_BSPC,
+        KC_TAB, KC_Q, LGUI_T(KC_W), LCTL_T(KC_F), MT(MOD_LCTL | MOD_LGUI, KC_P), KC_G,
+        KC_J, KC_L, LCTL_T(KC_U), LGUI_T(KC_Y), KC_SCLN, KC_BSPC,
 
         LCTL_T(KC_ESC), LSFT_T(KC_A), LT(6,KC_R), LT(3,KC_S), LT(4,KC_T), KC_D,
         KC_H, LT(5,KC_N), LT(2,KC_E), LT(7,KC_I), LSFT_T(KC_O), KC_QUOT,
 
-        KC_LSFT, MT(MOD_LCTL | MOD_LGUI, KC_Z), LALT_T(KC_X), LCTL_T(KC_C), KC_V, KC_B,
+        KC_LSFT, KC_Z, LALT_T(KC_X), LCTL_T(KC_C), KC_V, KC_B,
         KC_K, KC_M, LCTL_T(KC_COMM), LALT_T(KC_DOT), KC_SLSH, RSFT_T(KC_ENT),
 
         LT(9,KC_NO), KC_NO, KC_NO, KC_LGUI, LT(10,KC_ENT), KC_BSPC,
