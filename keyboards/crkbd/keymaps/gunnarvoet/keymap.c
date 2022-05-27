@@ -162,7 +162,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_SETTINGS] = LAYOUT_split_3x6_3(
         RESET, DEBUG, KC_NO, KC_NO, RGB_TOG, RGB_HUD,
-        RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, KC_NO,
+        RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, RGB_MOD,
 
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         KC_NO, KC_VOLD, KC_VOLU, KC_NO, KC_NO, KC_NO,
@@ -226,21 +226,21 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 void oled_render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (layer_state) {
-        case L_BASE:
-            oled_write_ln_P(PSTR("Default"), false);
+        case _COLEMAK:
+            oled_write_ln_P(PSTR("default"), false);
             break;
-        case L_LOWER:
-            oled_write_ln_P(PSTR("Lower"), false);
+        case _SYMR:
+            oled_write_ln_P(PSTR("symbol right"), false);
             break;
-        case L_RAISE:
-            oled_write_ln_P(PSTR("Raise"), false);
+        case _SYML:
+            oled_write_ln_P(PSTR("symbol left"), false);
             break;
-        case L_ADJUST:
-        case L_ADJUST|L_LOWER:
-        case L_ADJUST|L_RAISE:
-        case L_ADJUST|L_LOWER|L_RAISE:
-            oled_write_ln_P(PSTR("Adjust"), false);
-            break;
+        /* case L_ADJUST: */
+        /* case L_ADJUST|L_LOWER: */
+        /* case L_ADJUST|L_RAISE: */
+        /* case L_ADJUST|L_LOWER|L_RAISE: */
+        /*     oled_write_ln_P(PSTR("Adjust"), false); */
+        /*     break; */
     }
 }
 
